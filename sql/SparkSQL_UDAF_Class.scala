@@ -37,6 +37,7 @@ case class AvgBuffer(var sum: BigInt, var count: Int)
 //声明用户自定义聚合函数（强类型）
 // 1）继承Aggregator,设定泛型
 // 2）实现方法
+//Aggregator有两个，注意选择合适的类型
 class MyAgeAvgFunction1 extends Aggregator[UserBean, AvgBuffer ,Double] {
   //初始化
   override def zero: AvgBuffer = {
